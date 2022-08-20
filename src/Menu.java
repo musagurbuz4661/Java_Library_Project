@@ -34,7 +34,6 @@ public class Menu {
                 Sepet.Sepet();
                 Sepet.sepetToplam();
                 break;
-
             case "8":
                 Sepet.cikis();
                 break;
@@ -43,7 +42,6 @@ public class Menu {
                 Thread.sleep(3000);
                 Menu();
                 break;
-
         }
     }
 }
