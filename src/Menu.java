@@ -24,10 +24,6 @@ public class Menu {
         secim = scan.next();
         switch (secim) {
             case "1":
-                Kitaplar.kitapListesi();
-                Sepet.Tread.sleep(3000);
-                Menu();
-                break;
             case "2":
             case "3":
             case "4":

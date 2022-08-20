@@ -28,113 +28,44 @@ public class Kitaplar {
         kitapList.put(1020, "Bilim Cocuk, Tubitak, Dergi, 78");
         kitapList.put(1022, "PC Net, Net yayin, Dergi, 78");
         kitapList.put(1023, "Bilimci, Tubitak, Dergi, 87");
-        kitapList.put(1024, "Göçmüş Kediler Bahçesi, Bilge Karasu, Hikaye, 35");
+        kitapList.put(1024, "Gocmus Kediler Bahcesi, Bilge Karasu, Hikaye, 35");
         kitapList.put(1025, "Memleket Hikayeleri, Refik Halit Karay, Hikaye, 45");
-        kitapList.put(1026, "Ayışığında Çalışkur, Haldun Taner, Hikaye, 55");
+        kitapList.put(1026, "Ay isiginda Caliskur, Haldun Taner, Hikaye, 55");
         return kitapList;
     }
 
-    public static void kitapListesi() {
 
-
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK + " KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat " + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-
-        for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
-            Integer eachKey = each.getKey();
-            String eachValue = each.getValue();
-            String[] eachValueArray = eachValue.split(", ");
-            System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
-        }
-    }
 
     public static void bolumler() {
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK + " KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat " + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW + "===================================================================================" + Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK + "  KitapNo  " + "  Kitap Adi" + "                Yazar Adi" + "              Kitap Turu" + "      Fiyat " + Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW + "===================================================================================" + Renklendirme.ANSI_RESET);
         for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
             Integer eachKey = each.getKey();
             String eachValue = each.getValue();
             String[] eachValueArray = eachValue.split(", ");
+            if (Menu.secim.equals("1")) {
+                System.out.printf("  %-5d      %-25.25s%-20s   %-10s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+            }
             if (Menu.secim.equals("2") && eachValueArray[2].equals("Klasik")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+                System.out.printf("  %-5d      %-25.25s%-20s   %-10s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
             }
             if (Menu.secim.equals("3") && eachValueArray[2].equals("Roman")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+                System.out.printf("  %-5d      %-25.25s%-20s   %-10s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
             }
             if (Menu.secim.equals("4") && eachValueArray[2].equals("Hikaye")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+                System.out.printf("  %-5d      %-25.25s%-20s   %-10s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
             }
             if (Menu.secim.equals("5") && eachValueArray[2].equals("Cocuk")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+                System.out.printf("  %-5d      %-25.25s%-20s   %-10s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
             }
             if (Menu.secim.equals("6") && eachValueArray[2].equals("Egitim")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+                System.out.printf("  %-5d      %-25.25s%-20s   %-10s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
             }
             if (Menu.secim.equals("7") && eachValueArray[2].equals("Dergi")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+                System.out.printf("  %-5d      %-25.25s%-20s   %-10s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
             }
 
         }
     }
-    /*
-    public static void Romanlar() {
-        System.out.println( Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK +" KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat "+Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
-            Integer eachKey = each.getKey();
-            String eachValue = each.getValue();
-            String[] eachValueArray = eachValue.split(", ");
-            if (eachValueArray[2].equals("Roman")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
-            }
-        }
-    }
-
-
-    public static void Cocukkitaplari() {
-        System.out.println( Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK +" KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat "+Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
-            Integer eachKey = each.getKey();
-            String eachValue = each.getValue();
-            String[] eachValueArray = eachValue.split(", ");
-            if (eachValueArray[2].equals("Cocuk")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
-            }
-        }
-    }
-
-    public static void Egitimkitaplari() {
-        System.out.println( Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK +" KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat "+Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
-            Integer eachKey = each.getKey();
-            String eachValue = each.getValue();
-            String[] eachValueArray = eachValue.split(", ");
-            if (eachValueArray[2].equals("Egitim")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
-            }
-        }
-    }
-
-    public static void Dergiler() {
-        System.out.println( Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK +" KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat "+Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
-            Integer eachKey = each.getKey();
-            String eachValue = each.getValue();
-            String[] eachValueArray = eachValue.split(", ");
-            if (eachValueArray[2].equals("Dergi")) {
-                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
-            }
-        }
-    }
-
-     */
 }
