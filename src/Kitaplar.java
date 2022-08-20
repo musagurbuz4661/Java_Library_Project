@@ -28,6 +28,9 @@ public class Kitaplar {
         kitapList.put(1020, "Bilim Cocuk, Tubitak, Dergi, 78");
         kitapList.put(1022, "PC Net, Net yayin, Dergi, 78");
         kitapList.put(1023, "Bilimci, Tubitak, Dergi, 87");
+        kitapList.put(1024, "Göçmüş Kediler Bahçesi, Bilge Karasu, Hikaye, 35");
+        kitapList.put(1025, "Memleket Hikayeleri, Refik Halit Karay, Hikaye, 45");
+        kitapList.put(1026, "Ayışığında Çalışkur, Haldun Taner, Hikaye, 55");
         return kitapList;
     }
 
