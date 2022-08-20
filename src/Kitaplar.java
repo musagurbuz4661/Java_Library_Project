@@ -1,10 +1,9 @@
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
 public class Kitaplar {
-   public static Set<Map.Entry<Integer, String>> kitapListesiYazdir = kitaplar().entrySet();
+    public static Set<Map.Entry<Integer, String>> kitapListesiYazdir = kitaplar().entrySet();
 
     public static Map<Integer, String> kitaplar() {
         Map<Integer, String> kitapList = new TreeMap<>();
@@ -35,8 +34,8 @@ public class Kitaplar {
     public static void kitapListesi() {
 
 
-        System.out.println( Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK +" KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat "+Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK + " KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat " + Renklendirme.ANSI_RESET);
         System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
 
         for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
@@ -47,19 +46,36 @@ public class Kitaplar {
         }
     }
 
-    public static void klasikKitaplar() {
-        System.out.println( Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
-        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK +" KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat "+Renklendirme.ANSI_RESET);
+    public static void bolumler() {
+        System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
+        System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK + " KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat " + Renklendirme.ANSI_RESET);
         System.out.println(Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
         for (Map.Entry<Integer, String> each : kitapListesiYazdir) {
             Integer eachKey = each.getKey();
             String eachValue = each.getValue();
             String[] eachValueArray = eachValue.split(", ");
-            if (eachValueArray[2].equals("Klasik")) {
+            if (Menu.secim.equals("2") && eachValueArray[2].equals("Klasik")) {
                 System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
             }
+            if (Menu.secim.equals("3") && eachValueArray[2].equals("Roman")) {
+                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+            }
+            if (Menu.secim.equals("4") && eachValueArray[2].equals("Hikaye")) {
+                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+            }
+            if (Menu.secim.equals("5") && eachValueArray[2].equals("Cocuk")) {
+                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+            }
+            if (Menu.secim.equals("6") && eachValueArray[2].equals("Egitim")) {
+                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+            }
+            if (Menu.secim.equals("7") && eachValueArray[2].equals("Dergi")) {
+                System.out.printf("  %-5d      %-25.25s%-15s   %-7s      %s\n", eachKey, eachValueArray[0], eachValueArray[1], eachValueArray[2], eachValueArray[3]);
+            }
+
         }
     }
+    /*
     public static void Romanlar() {
         System.out.println( Renklendirme.ANSI_YELLOW + "===========================================================================" + Renklendirme.ANSI_RESET);
         System.out.println(Renklendirme.ANSI_YELLOW_BACKGROUND + Renklendirme.ANSI_BLACK +" KitapNo  " + "   Kitap Adi" + "                Yazar Adi" + "         Kitap Turu" + "   Fiyat "+Renklendirme.ANSI_RESET);
@@ -116,4 +132,6 @@ public class Kitaplar {
             }
         }
     }
+
+     */
 }

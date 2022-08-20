@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
     static Scanner scan = new Scanner(System.in);
+    static String secim;
 
     public static void Menu() throws InterruptedException {
         System.out.println(Renklendirme.ANSI_YELLOW + "========================================" + Renklendirme.ANSI_RESET);
@@ -20,7 +21,7 @@ public class Menu {
 
         System.out.println(Renklendirme.ANSI_YELLOW + "========================================" + Renklendirme.ANSI_RESET);
         System.out.println(Renklendirme.ANSI_GREEN + "Hangi bolume gitmek istersiniz : " + Renklendirme.ANSI_RESET);
-        String secim = scan.next();
+        secim = scan.next();
         switch (secim) {
             case "1":
                 Kitaplar.kitapListesi();
@@ -28,33 +29,16 @@ public class Menu {
                 Menu();
                 break;
             case "2":
-                Kitaplar.klasikKitaplar();
-                Sepet.Sepet();
-                Sepet.sepetToplam();
-                break;
             case "3":
-                Kitaplar.Romanlar();
-                Sepet.Sepet();
-                Sepet.sepetToplam();
-                break;
             case "4":
-                //  Kitaplar.Hikayeler();
-                break;
             case "5":
-                Kitaplar.Cocukkitaplari();
-                Sepet.Sepet();
-                Sepet.sepetToplam();
-                break;
             case "6":
-                Kitaplar.Egitimkitaplari();
-                Sepet.Sepet();
-                Sepet.sepetToplam();
-                break;
             case "7":
-                Kitaplar.Dergiler();
+                Kitaplar.bolumler();
                 Sepet.Sepet();
                 Sepet.sepetToplam();
                 break;
+
             case "8":
                 Sepet.cikis();
                 break;
@@ -63,7 +47,6 @@ public class Menu {
                 Thread.sleep(3000);
                 Menu();
                 break;
-
 
         }
     }
